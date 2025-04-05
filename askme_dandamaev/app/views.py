@@ -11,6 +11,14 @@ QUESTIONS = [
     } for i in range(30)
 ]
 
+ANSWERS = [
+    {
+        'text': f'This is text for answer {i}',
+        'rating': 5,
+        'id': i,
+    } for i in range(10)
+] 
+
 # Create your views here.
 def index(request):
     page_num = int(request.GET.get('page', 1))
@@ -26,7 +34,10 @@ def hot(request):
     return render(request, template_name='hot.html', context={'questions' : page.object_list, 'page_obj' : page})
 
 def question(request, question_id):
-    return render(request, template_name='single_question.html', context={'question' : QUESTIONS[question_id]})
+    page_num = int(request.GET.get('page', 1))
+    paginator = Paginator(ANSWERS, per_page = 5)
+    page = paginator.page(page_num)
+    return render(request, template_name='single_question.html', context={'question' : QUESTIONS[question_id], 'answers' : page.object_list, 'page_obj': page})
 
 def login(request):
     return render(request, template_name='login.html')

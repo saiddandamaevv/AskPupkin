@@ -8,17 +8,17 @@
                     <img src="../static/img/gentlemen.jpg" alt="тяу тяу тяу" class="img-fluid h-100 w-100">
                 </div>
                 <div>
-                    <input type="number" class="form-control" value="5">
+                    <input type="number" class="form-control" value="{{ answer.rating }}">
                 </div>
             </div>
             <div class="col d-flex flex-column justify-content-between">
                 <div>
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">Answer {{ answer.id }}</h5>
+                    <p class="card-text">{{ answer.text }}</p>
                 </div>
                 <div>
-                    <input type="checkbox" class="btn-check" name="correctAnswer" id="correct3" autocomplete="off">
-                    <label class="btn btn-outline-success" for="correct3">Correct!</label>
+                    <input type="checkbox" class="btn-check" name="correctAnswer" id="correct{{ answer.id }}" autocomplete="off">
+                    <label class="btn btn-outline-success" for="correct{{ answer.id }}">Correct!</label>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@
     </div>
     <articles class = "d-flex flex-column gap-2">
         {% include 'layouts/question.html' %}
-        {% for i in '123' %}
+        {% for answer in answers %}
             {% include 'layouts/answer.html' %}
         {% endfor %}
         {% include 'layouts/pagination.html' %}
