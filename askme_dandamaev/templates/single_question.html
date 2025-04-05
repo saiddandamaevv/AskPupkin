@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="d-flex align-items-center gap-2 mb-2 mt-2 text-light">
+        <h1>{{ question.title }}</h1>
+    </div>
+    <articles class = "d-flex flex-column gap-2">
+        {% include 'layouts/question.html' %}
+        {% for i in '123' %}
+            {% include 'layouts/answer.html' %}
+        {% endfor %}
+        {% include 'layouts/pagination.html' %}
+    </articles>
+{% endblock %}

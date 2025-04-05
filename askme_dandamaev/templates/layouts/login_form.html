@@ -1,0 +1,20 @@
+{% load static %}
+
+<div class="d-flex align-items-center mb-3">
+    <h1 class="text-light">Authorization</h1>
+</div>
+<form class="text-light needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="loginEmail" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" required>
+      <div class="invalid-feedback">Please enter a valid email address.</div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="loginPassword" class="form-label">Password</label>
+      <input type="password" class="form-control" id="loginPassword" required>
+      <div class="invalid-feedback">Please enter your password.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-1">Log in</button>
+</form>

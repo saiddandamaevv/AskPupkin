@@ -1,0 +1,45 @@
+{% load static %}
+
+<div class="d-flex align-items-center mb-3">
+    <h1 class="text-light">Registration</h1>
+</div>
+
+<form class="text-light needs-validation" novalidate>
+  <div class="mb-3">
+      <label for="signupLogin" class="form-label">Login</label>
+      <input type="text" class="form-control" id="signupLogin" required>
+      <div class="invalid-feedback">Please provide a valid login.</div>
+  </div>
+
+  <div class="mb-3">
+      <label for="signupEmail" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="signupEmail" required>
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <div class="invalid-feedback">Please provide a valid email.</div>
+  </div>
+
+  <div class="mb-3">
+      <label for="signupNickname" class="form-label">Nickname</label>
+      <input type="text" class="form-control" id="signupNickname" required>
+      <div class="invalid-feedback">Please provide a nickname.</div>
+  </div>
+
+  <div class="mb-3">
+      <label for="signupPassword" class="form-label">Password</label>
+      <input type="password" class="form-control" id="signupPassword" required>
+      <div class="invalid-feedback">Please provide a password.</div>
+  </div>
+
+  <div class="mb-3">
+      <label for="signupConfirmPassword" class="form-label">Confirm password</label>
+      <input type="password" class="form-control" id="signupConfirmPassword" required>
+      <div class="invalid-feedback">Please confirm your password.</div>
+  </div>
+
+  <div class="mb-3">
+      <label for="signupAvatar" src="placeholder.jpg" class="form-label">Upload avatar</label>
+      <input type="file" class="form-control" id="signupAvatar">
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-1">Sign up</button>
+</form>

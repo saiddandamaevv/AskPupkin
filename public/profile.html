@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile</title>
+    <link href="../askme_dandamaev/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+  </head>
+  <body class="bg-dark d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+      <div class="container"> 
+
+        <a class="navbar-brand text-light" href="#">AskPupkin</a>
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Ask</button>
+        </form>
+
+        <div class="d-flex gap-2 align-items-center">
+
+            <div>
+              <img src="../static/img/gentlemen.jpg" class="img-thumbnail" width="50px" alt="...">
+            </div>
+
+            <div class="content">
+              <div class="content_name text-light">Пупупу</div>
+              <div class="content_links">
+                <a href="#">Settings</a>
+                <a href="#">Log out</a>
+              </div>
+            </div>
+
+        </div>
+
+      </div>
+    </nav>
+
+
+    <main class="container mt-2" data-bs-theme="dark">
+      <div class="row">
+
+        <section class="col-9 bg-dark">
+            <div class="d-flex align-items-center mb-3">
+                <h1 class="text-light">Profile</h1>
+            </div>
+
+            <form class="text-light">
+                <div class="mb-3">
+                    <label for="profileLogin" class="form-label">Login</label>
+                    <input type="text" class="form-control" id="profileLogin" aria-describedby="emailHelp" value="Your login" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="profileEmail" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="profileEmail" aria-describedby="emailHelp" value="Your email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="profileNickname" class="form-label">Nickname</label>
+                    <input type="text" class="form-control" id="profileNickname" aria-describedby="emailHelp" value="Your nickname" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="signupAvatar" src="placeholder.jpg" class="form-label">Avatar</label>
+                    <div style="width: 200px; height: 200px;">
+                      <img src="../static/img/gentlemen.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <input type="file" class="form-control mt-5" id="profileAvatar">
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-1">Save</button>
+              </form>
+        </section>
+
+        <aside class="col-3 bg-dark">
+          <section class="mb-3">
+            <h3 class="text-light"> Popular tags</h3>
+            <div>
+              <span class="badge text-bg-primary">Primary</span>
+              <span class="badge text-bg-secondary">Secondary</span>
+              <span class="badge text-bg-success">Success</span>
+              <span class="badge text-bg-danger">Danger</span>
+              <span class="badge text-bg-warning">Warning</span>
+              <span class="badge text-bg-info">Info</span>
+              <span class="badge text-bg-light">Light</span>
+              <span class="badge text-bg-dark">Dark</span>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="text-light">Best members</h3>
+            <div>
+              <a class="d-block" href="#">Member</a>
+              <a class="d-block" href="#">Member</a>
+              <a class="d-block" href="#">Member</a>
+              <a class="d-block" href="#">Member</a>
+              <a class="d-block" href="#">Member</a>
+              <a class="d-block" href="#">Member</a>
+            </div>
+          </section>
+        </aside>
+
+      </div>
+    </main>
+
+    <footer class="bg-black py-3 mt-auto text-white-50" style="flex: 0 1 auto"> 
+        <div class="container text-center">
+            <p class="mb-0">© 2025 AskPupkin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../askme_dandamaev/static/bootstrap/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
