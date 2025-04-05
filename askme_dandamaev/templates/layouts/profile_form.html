@@ -1,0 +1,32 @@
+{% load static %}
+
+<div class="d-flex align-items-center mb-3">
+    <h1 class="text-light">Profile</h1>
+</div>
+
+<form class="text-light">
+    <div class="mb-3">
+        <label for="profileLogin" class="form-label">Login</label>
+        <input type="text" class="form-control" id="profileLogin" aria-describedby="emailHelp" value="Your login" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="profileEmail" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="profileEmail" aria-describedby="emailHelp" value="Your email" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="profileNickname" class="form-label">Nickname</label>
+        <input type="text" class="form-control" id="profileNickname" aria-describedby="emailHelp" value="Your nickname" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="signupAvatar" src="placeholder.jpg" class="form-label">Avatar</label>
+        <div style="width: 200px; height: 200px;">
+          <img src="{% static 'img/gentlemen.jpg' %}" class="img-fluid" alt="...">
+        </div>
+        <input type="file" class="form-control mt-5" id="profileAvatar">
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-1">Save</button>
+  </form>

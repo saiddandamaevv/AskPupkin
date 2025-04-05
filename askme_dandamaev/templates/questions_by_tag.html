@@ -3,8 +3,7 @@
 
 {% block content %}
     <div class="d-flex align-items-center gap-2 mb-2 mt-2 text-light">
-        <h1>New Questions</h1>
-        <a href="{% url 'hot' %}" class="text-decoration-none">Hot Questions</a>
+        <h1>Tag: {{ tag }}</h1>
     </div>
     <articles class = "d-flex flex-column gap-2">
         {% for question in questions %}

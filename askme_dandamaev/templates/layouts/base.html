@@ -1,10 +1,12 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link href="../static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
   </head>
   <body class="bg-dark text-light d-flex flex-column min-vh-100">
 
@@ -27,8 +29,8 @@
             <div class="content">
               <div class="content_name text-light">Пупупу</div>
               <div class="content_links">
-                <a href="{% url 'signup' %}">Settings</a>
-                <a href="{% url 'login' %}">Log out</a>
+                <a href="{% url 'profile' %}">Settings</a>
+                <a href="{% url 'signup' %}">Log out</a>
               </div>
             </div>
 
@@ -50,26 +52,26 @@
           <section class="mb-3">
             <h3 class="text-light"> Popular tags</h3>
             <div>
-              <span class="badge text-bg-primary">Primary</span>
-              <span class="badge text-bg-secondary">Secondary</span>
-              <span class="badge text-bg-success">Success</span>
-              <span class="badge text-bg-danger">Danger</span>
-              <span class="badge text-bg-warning">Warning</span>
-              <span class="badge text-bg-info">Info</span>
-              <span class="badge text-bg-light">Light</span>
-              <span class="badge text-bg-dark">Dark</span>
+              <a href="{% url 'tag' tag='tag1' %}" class="text-decoration-none badge text-bg-primary">Primary</a>
+              <a href="{% url 'tag' tag='tag2' %}" class="text-decoration-none badge text-bg-secondary">Secondary</a>
+              <a href="{% url 'tag' tag='tag3' %}" class="text-decoration-none badge text-bg-success">Success</a>
+              <a href="{% url 'tag' tag='tag4' %}" class="text-decoration-none badge text-bg-danger">Danger</a>
+              <a href="{% url 'tag' tag='tag5' %}" class="text-decoration-none badge text-bg-warning">Warning</a>
+              <a href="{% url 'tag' tag='tag6' %}" class="text-decoration-none badge text-bg-info">Info</a>
+              <a href="{% url 'tag' tag='tag7' %}" class="text-decoration-none badge text-bg-light">Light</a>
+              <a href="{% url 'tag' tag='tag8' %}" class="text-decoration-none badge text-bg-dark">Dark</a>
             </div>
           </section>
 
           <section>
             <h3 class="text-light">Best members</h3>
             <div>
-              <a class="d-block" href="#">Member</a>
-              <a class="d-block" href="#">Member</a>
-              <a class="d-block" href="#">Member</a>
-              <a class="d-block" href="#">Member</a>
-              <a class="d-block" href="#">Member</a>
-              <a class="d-block" href="#">Member</a>
+              <a class="d-block text-decoration-none" href="#">Member</a>
+              <a class="d-block text-decoration-none" href="#">Member</a>
+              <a class="d-block text-decoration-none" href="#">Member</a>
+              <a class="d-block text-decoration-none" href="#">Member</a>
+              <a class="d-block text-decoration-none" href="#">Member</a>
+              <a class="d-block text-decoration-none" href="#">Member</a>
             </div>
           </section>
         </aside>
@@ -83,6 +85,6 @@
         </div>
     </footer>
 
-    <script src="../static/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
   </body>
 </html>

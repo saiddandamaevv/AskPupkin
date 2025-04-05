@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-2">
                 <div style = "height: 100px;" class="border mb-2 w-100">
-                    <img src="../static/img/gentlemen.jpg" alt="тяу тяу тяу" class="img-fluid h-100 w-100">
+                    <img src="{% static 'img/gentlemen.jpg' %}" alt="тяу тяу тяу" class="img-fluid h-100 w-100">
                 </div>
                 <div>
                     <input type="number" class="form-control" value="5">
@@ -13,17 +13,17 @@
             </div>
             <div class="col d-flex flex-column justify-content-between">
                 <div>
-                    <a href="{% url 'question' question.id %}">{{ question.title }}</a>
+                    <a href="{% url 'question' question.id %}" class="text-decoration-none">{{ question.title }}</a>
                     <p class="card-text">{{ question.text }}</p>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <a href="{% url 'question' question.id %}">Answers (3)</a>
+                        <a href="{% url 'question' question.id %}" class="text-decoration-none">Answers (3)</a>
                     </div>
                     <div class="col">
                         <span>Tags:</span>
-                        <span class="badge rounded-pill text-bg-primary">Primary</span>
-                        <span class="badge rounded-pill text-bg-secondary">Secondary</span>
+                        <a href="{% url 'tag' tag='tag1' %}" class="text-decoration-none badge text-bg-primary">Primary</a>
+                        <a href="{% url 'tag' tag='tag2' %}" class="text-decoration-none badge text-bg-secondary">Secondary</a>
                     </div>
                 </div>
             </div>
