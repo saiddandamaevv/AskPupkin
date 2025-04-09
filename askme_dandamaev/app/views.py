@@ -2,23 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator
 import copy
+from app.models import Question, Answer, Tag
+from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
-QUESTIONS = [
-    {
-        'title' : f'Title {i}', 
-        'id' : i,
-        'text' : f'This is text for question {i}',
-    } for i in range(30)
-]
-
-ANSWERS = [
-    {
-        'text': f'This is text for answer {i}',
-        'rating': 5,
-        'id': i,
-    } for i in range(10)
-] 
 
 def paginate(objects_list, request, per_page=10):
     try:
@@ -39,17 +25,27 @@ def paginate(objects_list, request, per_page=10):
 
 # Create your views here.
 def index(request):
-    page = paginate(QUESTIONS, request, 5)
+    questions = Question.objects.new()
+    page = paginate(questions, request, 5)
     return render(request, template_name='index.html', context={'questions' : page.object_list, 'page_obj' : page})
 
 def hot(request):
-    q = copy.deepcopy(QUESTIONS)[::-1]
-    page = paginate(q, request, 5)
+    questions = Question.objects.hot()
+    page = paginate(questions, request, 5)
     return render(request, template_name='hot.html', context={'questions' : page.object_list, 'page_obj' : page})
 
+
 def question(request, question_id):
-    page = paginate(ANSWERS, request, 5)
-    return render(request, template_name='single_question.html', context={'question' : QUESTIONS[question_id], 'answers' : page.object_list, 'page_obj': page})
+    try:
+        question, answers = Question.objects.get_question_with_answers(question_id)  
+        page = paginate(answers, request, 5)
+        return render(request, 'single_question.html', {
+            'question': question,
+            'answers': page.object_list,
+            'page_obj': page,
+        })
+    except Question.DoesNotExist:
+        raise Http404("Вопрос не найден")
 
 def login(request):
     return render(request, template_name='login.html')
